@@ -1,0 +1,8 @@
+{
+  "name": "Wallpaper Manager",
+  "description": "Manages light and dark wallpapers",
+  "uuid": "GWppM@ivvil.shft.dev",
+  "shell-version": [
+    "46"
+  ]
+}
