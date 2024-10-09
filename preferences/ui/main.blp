@@ -1,15 +1,38 @@
 using Gtk 4.0;
 using Adw 1;
 
-Adw.PreferencesPage {
-  title: "Wallpaper Manager Preferences";
-  description: "Configure wallpapers";
+Adw.PreferencesPage preferences {
+	title: _("Wallpaper Manager Preferences");
+	description: _("Configure wallpapers");
 
-  Adw.PreferencesGroup {
-	description: "Choose backgrounds to cycle in light/dark mode.";
+	Adw.PreferencesGroup {
+		title: _("Backgrounds");
+		description: _("Choose backgrounds to cycle in light/dark mode.");
 
-	Adw.ActionRow {
-	  
+		Adw.ActionRow {
+			title: _("Light wallpaper");
+			activatable-widget: light_chooser;
+
+			[suffix]
+			Button light_chooser {
+				halign: center;
+				valign: center;
+				label: _("Open file chooser");
+				icon-name: "document-open-symbolic";
+			}
+		}
+
+		Adw.ActionRow {
+			title: _("Dark wallpaper");
+			activatable-widget: dark_chooser;
+
+			[suffix]
+			Button dark_chooser {
+				halign: center;
+				valign: center;
+				label: _("Open file chooser");
+				icon-name: "document-open-symbolic";
+			}
+		}
 	}
-  }
 }

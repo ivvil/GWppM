@@ -1,8 +1,9 @@
 {
-  "name": "Wallpaper Manager",
-  "description": "Manages light and dark wallpapers",
-  "uuid": "GWppM@ivvil.shft.dev",
-  "shell-version": [
-    "46"
-  ]
+	"name": "Wallpaper Manager",
+	"description": "Manages light and dark wallpapers",
+	"uuid": "gwppm@ivvil.shft.dev",
+	"shell-version": [
+		"46"
+	],
+  "settings-schema": "org.gnome.shell.extensions.gwppm"
 }
