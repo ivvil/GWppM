@@ -5,6 +5,7 @@ import Adw from 'gi://Adw';
 import GObject from 'gi://GObject';
 
 import { ExtensionPreferences } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
+import { Wallpapers } from './preferences/wallpaper.js'
 
 export default class ExamplePreferences extends ExtensionPreferences {
 	/**
@@ -46,8 +47,6 @@ export default class ExamplePreferences extends ExtensionPreferences {
 	fillPreferencesWindow(window) {
 		window.search_enabled = true;
 		window.set_default_size(500, 630);
-
-		const { Wallpapers } = await import('./preferences/wallpaper.js');
 
 		GObject.type_ensure(Wallpapers);
 
