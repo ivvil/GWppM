@@ -50,7 +50,7 @@ export default class ExamplePreferences extends ExtensionPreferences {
 
 		GObject.type_ensure(Wallpapers);
 
-		let preferencesPage = new Wallpapers({ settings: this.getSettings(`${this.metadata['settings-schema']}.time`) });
+		let preferencesPage = new Wallpapers({ settings: this.getSettings(`${this.metadata['settings-schema']}`) });
 		window.add(preferencesPage);
 	}
 }
