@@ -1,9 +1,10 @@
+'use strict';
+
 import Gtk from 'gi://Gtk?version=4.0';
 import Adw from 'gi://Adw';
+import GObject from 'gi://GObject';
 
-import { ExtensionPreferences, gettext as _ } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
-import { Preferences } from './preferences/wallpaper.js';
-
+import { ExtensionPreferences } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
 export default class ExamplePreferences extends ExtensionPreferences {
 	/**
@@ -46,7 +47,11 @@ export default class ExamplePreferences extends ExtensionPreferences {
 		window.search_enabled = true;
 		window.set_default_size(500, 630);
 
-	  let preferencesPage = new Preferences({ settings: this.getSettings(`${this.metadata['settings-schema']}.time`) })
-	  window.add(preferencesPage);
+		const { Wallpapers } = await import('./preferences/wallpaper.js');
+
+		GObject.type_ensure(Wallpapers);
+
+		let preferencesPage = new Wallpapers({ settings: this.getSettings(`${this.metadata['settings-schema']}.time`) });
+		window.add(preferencesPage);
 	}
 }
