@@ -2,10 +2,10 @@
 <schemalist>
 	<schema id="org.gnome.shell.extensions.gwppm"
 		path="/org/gnome/shell/extensions/gwppm/">
-		<key name="light-wallpapers" type="as">
+		<key name="light-wallpapers" type="s">
 			<default>""</default>
 		</key>
-		<key name="dark-wallpapers" type="as">
+		<key name="dark-wallpapers" type="s">
 			<default>""</default>
 		</key>
 	</schema>
